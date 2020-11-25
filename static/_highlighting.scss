@@ -1,0 +1,45 @@
+/* {} */
+$brackets: #FF5555;
+
+/* == != >= <= | + / * ~ , ( ) __ ^ - : */
+$operators: #00FFFF;
+
+/* unix uses args user target server join replace if any all and or
+break contains strf # random rand urlencode td index list cycle =
+let assign in upper lower m math 50: c cmd redirect require blacklist react reactu dm delete silence override lvl range */
+$block: #00FF00;
+
+/*avatar id created_at joined_at roleids color name proper
+position icon owner randomonline randomoffline members bots humans roles channels topic slowmode mention trunc round abs */
+$parameters: #0080FF;
+
+/* true false */
+$boolean: #FFFF00;
+
+/* %a %A %w %d %-d %b %B %m %-m %y %Y %H %-H %I %-I %p %M %-M %S %-S %f %z %Z %j %-j %U %W %c %x %X %u %n %i %s */
+$strf: $brackets;
+
+/* http https */
+$http: #BA75FF;
+
+#brackets {
+	color: $brackets;
+}
+#operators {
+	color: $operators;
+}
+#blocks {
+	color: $block;
+}
+#parameters {
+	color: $parameters;
+}
+#boolean {
+	color: $boolean;
+}
+#strf {
+	color: $strf;
+}
+#http {
+	color: $http;
+}

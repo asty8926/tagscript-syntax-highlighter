@@ -1,0 +1,40 @@
+@import './variables';
+@import './imports';
+@import './highlighting';
+
+body {
+	background-color: $dark-bg;
+	font-family: $opensans;
+	color: white;
+}
+
+.card {
+	&::part(body){
+		/*display: block;*/
+		margin: 0 auto;
+		padding: 20px;
+		/*max-width: 800px;*/
+	}
+}
+
+.textarea {
+	&::part(label) {
+		margin-bottom: 20px;
+		text-align: left;
+	}
+	&::part(textarea) {
+		width: 800px;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: black;
+		border-radius: 10px;
+		border: 1px solid #292929;
+	}
+	
+}
+

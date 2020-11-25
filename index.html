@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>TagScript Online Formatter</title>
+		<!-- CSS import-->
+		<link rel="stylesheet" type="text/css" href="./static/style.css">
+
+		<!-- Shoelace imports -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.23/dist/shoelace/shoelace.css">
+		<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.23/dist/shoelace/shoelace.esm.js"></script>
+
+		<!-- Dark mode -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.23/themes/dark.css">
+
+		<!-- JavaScript file import -->
+		<script src="./static/app.js"></script>
+</head>
+<body>
+	<!-- Wrap the whole content of the page within that sl-theme tag, so all shoelace components inherits from the dark mode theme -->
+	<sl-theme name="dark">
+		<center>
+		<sl-card class="card">
+			<sl-textarea class="textarea" id="textareaid" placeholder="Type something here" rows="10" label="TagScript Code" contenteditable="true">
+			</sl-textarea>
+		</sl-card>
+		<br><br>
+		<sl-button type="primary" id="submit">
+			Submit	
+		</sl-button>
+		<br><br><br>
+
+		<sl-card class="card" id="formatted">
+			
+		</sl-card>
+		</center>
+
+		
+
+	</sl-theme>
+</body>
+</html>

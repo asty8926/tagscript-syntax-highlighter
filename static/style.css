@@ -1,0 +1,83 @@
+/* Create the CSS variables you'll use across your project's SCSS (Sass) files here.
+Variable creation example:
+$myVariable: #eeaaee;
+*/
+/*
+Importing the "Roboto" Google Font below as an example.
+Quick access: https://fonts.google.com
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* "Open Sans" Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+/* {} */
+/* == != >= <= | + / * ~ , ( ) __ ^ - : */
+/* unix uses args user target server join replace if any all and or
+break contains strf # random rand urlencode td index list cycle =
+let assign in upper lower m math 50: c cmd redirect require blacklist react reactu dm delete silence override lvl range */
+/*avatar id created_at joined_at roleids color name proper
+position icon owner randomonline randomoffline members bots humans roles channels topic slowmode mention trunc round abs */
+/* true false */
+/* %a %A %w %d %-d %b %B %m %-m %y %Y %H %-H %I %-I %p %M %-M %S %-S %f %z %Z %j %-j %U %W %c %x %X %u %n %i %s */
+/* http https */
+#brackets {
+  color: #FF5555;
+}
+
+#operators {
+  color: #00FFFF;
+}
+
+#blocks {
+  color: #00FF00;
+}
+
+#parameters {
+  color: #0080FF;
+}
+
+#boolean {
+  color: #FFFF00;
+}
+
+#strf {
+  color: #FF5555;
+}
+
+#http {
+  color: #BA75FF;
+}
+
+body {
+  background-color: #171A1C;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.card::part(body) {
+  /*display: block;*/
+  margin: 0 auto;
+  padding: 20px;
+  /*max-width: 800px;*/
+}
+
+.textarea::part(label) {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.textarea::part(textarea) {
+  width: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid #292929;
+}
+/*# sourceMappingURL=style.css.map */
