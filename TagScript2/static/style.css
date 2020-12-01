@@ -1,0 +1,84 @@
+/* Create the CSS variables you'll use across your project's SCSS (Sass) files here.
+Variable creation example:
+$myVariable: #eeaaee;
+*/
+/*
+Importing the "Roboto" Google Font below as an example.
+Quick access: https://fonts.google.com
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
+/* backtiles */
+/* {=(COMMENT):XXX} */
+/* {} */
+/* == != >= <= | + / * ~ , ( ) __ ^ - : */
+/* unix uses args user target server join replace if any all and or
+break contains strf # random rand urlencode td index list cycle =
+let assign in upper lower m math 50: c cmd redirect require blacklist react reactu dm delete silence override lvl range */
+/* avatar id created_at joined_at roleids color name proper
+position icon owner randomonline randomoffline members bots humans roles channels topic slowmode mention trunc round abs */
+/* true false */
+/* %a %A %w %d %-d %b %B %m %-m %y %Y %H %-H %I %-I %p %M %-M %S %-S %f %z %Z %j %-j %U %W %c %x %X %u %n %i %s */
+/* http https */
+.backtiles {
+  color: #80FF80;
+}
+
+.comments {
+  color: #72B8B8;
+}
+
+.brackets {
+  color: #FF5555;
+}
+
+.operators {
+  color: #00FFFF;
+}
+
+.blocks {
+  color: #00FF00;
+}
+
+.parameters {
+  color: #0080FF;
+}
+
+.boolean {
+  color: #FFFF00;
+}
+
+.strf {
+  color: #FF5555;
+}
+
+.http {
+  color: #BA75FF;
+}
+
+body {
+  background-color: #1F2227;
+  font-family: "Roboto", sans-serif;
+  color: #fff8e6;
+}
+
+textarea {
+  background-color: #1F2227;
+  color: #fff8e6;
+  border-radius: 2px;
+  overflow: auto;
+  height: auto;
+}
+
+.output {
+  color: #fff8e6;
+  white-space: pre-wrap;
+  font-family: "Roboto", sans-serif;
+  margin-top: 100px;
+  margin-right: -100px;
+}
+
+.info {
+  vertical-align: text-top;
+}
+/*# sourceMappingURL=style.css.map */

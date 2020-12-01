@@ -1,0 +1,32 @@
+@import './variables';
+@import './imports';
+@import './highlight';
+
+$tclr: #ECFBD8;
+$tclr: #fff8e6;
+
+body {
+	background-color: #1F2227;
+	font-family: $roboto;
+	color: $tclr;
+}
+
+textarea {
+	background-color: #1F2227;
+	color: $tclr;
+	border-radius: 2px;
+	overflow: auto;
+	height: auto;
+}
+
+.output {
+	color: $tclr;
+	white-space: pre-wrap;
+	font-family: $roboto;
+	margin-top: 100px;
+	margin-right: -100px;
+}
+
+.info {
+	vertical-align: text-top;
+}

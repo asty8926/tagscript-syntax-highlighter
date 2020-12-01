@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>TagScript Syntax Highlithgint</title>
+		<link rel="stylesheet" type="text/css" href="./static/style.css">
+
+		<!-- <script src="https://unpkg.com/vue@2.6.12/dist/vue.js" defer></script> -->
+		<script src="https://unpkg.com/vue" defer></script>
+		<script src="./static/app.js" defer></script>
+		
+</head>
+<body>
+	<div id="app">
+		<h1 class="title">TagScript Syntax Highlighter</h1>
+		<h3 class="subtitle">by Asty'#8926</h3>
+		<textarea class="input" v-model="input" placeholder="Type something" cols=50 rows=10></textarea>
+		<span class="info">Brackets: *Unbalanced*
+			Length: 4284
+			Lines: 164
+		</span>
+		<br>
+		<span class="output" v-html="highlight()"></span>
+	  </div>
+	  
+		
+</body>
+</html>
