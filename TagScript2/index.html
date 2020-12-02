@@ -15,13 +15,23 @@
 	<div id="app">
 		<h1 class="title">TagScript Syntax Highlighter</h1>
 		<h3 class="subtitle">by Asty'#8926</h3>
-		<textarea class="input" v-model="input" placeholder="Type something" cols=50 rows=10></textarea>
-		<span class="info">Brackets: *Unbalanced*
-			Length: 4284
-			Lines: 164
-		</span>
+		<div class="container">
+			<h4>Content</h4>
+			<div class="codeinfo">
+				<textarea class="input" v-model="input" placeholder="Enter some tag content" cols=50 rows=5></textarea>
+			<span class="info">
+				<ul>
+					<li class="info"><u>Brackets:</u> {{ countBrackets }}</li>
+					<li class="info"><u>Lines:</u> To add</li>
+					<li class="info"><u>Characters:</u> {{ countChars }}</li>
+				</ul>
+			</span>
+			</div>
+		</div>
+
 		<br>
 		<span class="output" v-html="highlight()"></span>
+		<!-- <button :click="webScrape">Scrape: Check console</button> -->
 	  </div>
 	  
 		

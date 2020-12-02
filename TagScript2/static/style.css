@@ -56,29 +56,111 @@ position icon owner randomonline randomoffline members bots humans roles channel
   color: #BA75FF;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
-  background-color: #1F2227;
+  background-color: #3A4149;
   font-family: "Roboto", sans-serif;
-  color: #fff8e6;
+  color: #e4e7ea;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.2rem;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.codeinfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1.5rem;
+}
+
+h4 {
+  font-size: 1.3125rem;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  display: block;
 }
 
 textarea {
-  background-color: #1F2227;
-  color: #fff8e6;
-  border-radius: 2px;
+  /* background-color: transparent; */
+  background-color: #515b65;
+  color: #e4e7ea;
+  border-radius: 4px;
   overflow: auto;
+  overflow-wrap: break-word;
   height: auto;
+  padding: .375rem .75rem;
+  resize: vertical;
+  border: 1px solid #23282c;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  /* outline:none; */
+}
+
+textarea:focus {
+  /* outline: white;
+		outline-color: white;
+		outline-offset: 0px;
+		outline-color: $blueclr;
+		border: none; 
+		border-style: none; */
+  border-color: #79d0ff;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 162, 248, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(0, 162, 248, 0.25);
+}
+
+textarea:placeholder {
+  color: #ACB4BC;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome */
+  color: #ACB4BC;
+}
+
+.info {
+  list-style: none;
+  vertical-align: text-top;
+}
+
+ul, li {
+  margin: 0px;
+  padding: 0px;
+  line-height: 2em;
 }
 
 .output {
-  color: #fff8e6;
+  color: #e4e7ea;
   white-space: pre-wrap;
   font-family: "Roboto", sans-serif;
   margin-top: 100px;
   margin-right: -100px;
 }
 
-.info {
-  vertical-align: text-top;
+div {
+  display: block;
+}
+
+button {
+  margin-left: 7rem;
 }
 /*# sourceMappingURL=style.css.map */

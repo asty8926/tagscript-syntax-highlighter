@@ -11,7 +11,7 @@ new Vue({
 		comments: /({=\(COMMENT\):.+\})/g,
 		brackets: /\{|\}/g,
 		operators: /(==|!=|(?<!<\/span)>=|(?<!>)<=|\||\+|(?<!<?)\/|\*|~|,|\(|\)|__|\^|-|:)/g,
-		blocks: /(?<=\{<\/span>)(unix|uses|args|user|target|server|join|replace|if|any|all|and|or|break|contains|strf|#|random|rand|urlencode|td|index|list|cycle|=|let|assign|in|upper|lower|m|math|50|c|cmd|redirect|require|blacklist|react|reactu|dm|delete|silence|override|lvl|range)(?=\}|<span class="operators">\(?|:)/g,
+		blocks: /(?<=\{<\/span>)(unix|uses|args|user|target|server|join|replace|if|any|all|and|or|break|contains|strf|#|random|rand|urlencode|td|index|list|cycle|=|let|assign|in|upper|lower|m|math|50|c|cmd|redirect|require|blacklist|react|reactu|dm|delete|silence|override|lvl|range)(?=<span class="brackets">\}?|<span class="operators">\(?|:)/g,
 		parameters: /(?<=\(|\(<\/span>)(avatar|id|created_at|joined_at|roleids|color|name|proper|position|icon|owner|randomonline|randomoffline|members|bots|humans|roles|channels|topic|slowmode|mention|trunc|round|abs)(?=\)|<span)/g,
 		boolean: /(true|false)/g,
 		strf: /(%a|%A|%w|%d|%-d|%b|%B|%m|%-m|%y|%Y|%H|%-H|%I|%-I|%p|%M|%-M|%S|%-S|%f|%z|%Z|%j|%-j|%U|%W|%c|%x|%X|%u|%n|%i|%s)/g,
@@ -43,21 +43,59 @@ new Vue({
 			}
 			console.log(output)
 			return output
-			// Sanitizing the regex
-			/* var sanitized = this.escapeRegExp(this.categories.brackets)
-			console.log(`should return brackets: ${this.categories.brackets}`)
-			var regex = new RegExp(sanitized, 'g')
-			console.log(regex)
-			return this.input.replace(regex, match => {
-				console.log("Does it even display this?")
-				return `<span class="brackets">${match}</span>`
-			}) */
 		 },
 		escapeRegExp(stringToGoIntoTheRegex) {
 			return stringToGoIntoTheRegex.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 		}
 	},
 	computed: {
-		
+		countBrackets() {
+			/* Example to count the occurrences of a string in a string.
+			var theString = "This is a string.";
+			console.log(theString.split("is").length - 1);
+			*/
+			var output = ''
+			var balanced = "✓ Balanced"
+			var unbalanced = "❌ Unbalanced"
+			var opening = (this.input.split("{").length - 1)
+			var closing = (this.input.split("}").length - 1)
+			// Returns balanced if opening is equal to closing, otherwise unbalanced
+			output = (opening == closing) ? balanced : unbalanced
+			return output
+		},
+		countChars() {
+			var chars = (this.input.split('').length)
+			return chars
+		},
+		webScrape: async () => {
+			// https://carl.gg/api/v1/tags/446736 https://carl.gg/api/v1/tags/365946
+			//let request = new HMLHttpRequest()
+			//request.open('GET', 'https://carl.gg/api/v1/tags/365946')
+			//request.send()
+			try {
+				const response = await fetch('https://carl.gg/api/v1/tags/365946')
+				const content = await response.text()
+				console.log(content)
+				return content
+			} catch (err) {
+				console.error(err)
+			}
+		}
+		/* webScrape: async () => {
+			 const response = await fetch('https://carl.gg/t/365946', {
+				method: 'GET',
+				mode: 'no-cors'
+			})
+			//.then(response => response.text().then(html => console.log(html)))
+			//.catch(error => console.log(error))
+			const html = await response.text()
+			console.log(html)
+			//let parser = new DOMParser()
+			//let doc = parser.parseFromString(html, "text/html")
+			//console.log(doc)
+			//let textarea = doc.textarea.value
+			//console.log(textarea)
+		} */
+
 	}
 })
