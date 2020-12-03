@@ -3,7 +3,6 @@ new Vue({
 	el: "#app",
 	data: {
 		input: '',
-		tempout: '',
 	categories: {
 		// MetaCharacters to espace:
 		// . [ { ( ) \ ^ $ | ? * +
@@ -21,8 +20,8 @@ new Vue({
 	methods: {
 		highlight() {
 			if (!this.input) {
-				console.log("Input is empty.")
-				return this.input
+				//console.log("Input is empty.")
+				return '<p style="color: #ACB4BC;">It will be highlighted here</p>'
 			}
 			var output = this.input;
 			for (const [key, value] of Object.entries(this.categories)) {
@@ -41,11 +40,27 @@ new Vue({
 					return `<span class="${key}">${match}</span>`
 				})
 			}
-			console.log(output)
+			//console.log(output)
 			return output
 		 },
 		escapeRegExp(stringToGoIntoTheRegex) {
+			// Currently unused, due to how I actually formatted each regex group well
 			return stringToGoIntoTheRegex.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+		},
+		autoHeight() {
+			// Sets the auto-height for our code textarea to match the output's!
+			const minHeight = 85 // Minimum height of our textarea, in pixels (px)
+			const maxWidth = 472
+			var tarea = this.$refs.input
+			//console.log(tarea.scrollHeight)
+
+			var output = this.$refs.output
+
+			//var newHeight = (tarea.scrollHeight < minHeight ? minHeight : tarea.scrollHeight) + "px"
+			var newHeight = ((tarea.scrollHeight < minHeight || this.input == '') ? minHeight : output.clientHeight) + "px"
+			tarea.style.height = newHeight
+			tarea.style.width = maxWidth
+			//console.log(`New height: ${newHeight}`)
 		}
 	},
 	computed: {
@@ -67,7 +82,17 @@ new Vue({
 			var chars = (this.input.split('').length)
 			return chars
 		},
-		webScrape: async () => {
+		countLines() {
+			var split = this.input.split("\n")
+			var lines = split.length
+			return lines
+		},
+		copyClipboard() {
+			this.input.select()
+			document.execCommand("copy")
+		}
+
+		/*webScrape: async () => {
 			// https://carl.gg/api/v1/tags/446736 https://carl.gg/api/v1/tags/365946
 			//let request = new HMLHttpRequest()
 			//request.open('GET', 'https://carl.gg/api/v1/tags/365946')
@@ -80,7 +105,7 @@ new Vue({
 			} catch (err) {
 				console.error(err)
 			}
-		}
+		}*/
 		/* webScrape: async () => {
 			 const response = await fetch('https://carl.gg/t/365946', {
 				method: 'GET',
