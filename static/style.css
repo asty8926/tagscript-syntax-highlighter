@@ -168,10 +168,10 @@ label {
   background-color: #515b65;
   height: auto;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
   padding: 6px 12px;
   min-height: 85px;
-  display: inline-table;
-  width: 100%;
+  max-width: 472px;
 }
 
 footer {
