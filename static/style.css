@@ -61,137 +61,129 @@ position icon owner randomonline randomoffline members bots humans roles channel
           box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #474747;
+  border-radius: 10px;
+  border: 1px solid #292929;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #292929;
+}
+
 body {
-  background-color: #3A4149;
   font-family: "Roboto", sans-serif;
-  color: #e4e7ea;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.2rem;
+  height: auto;
 }
 
 .navbar {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 22px;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  padding: 0.5rem;
+}
+
+.row {
+  gap: 3rem;
+}
+
+.badge {
+  margin-left: 0.5rem;
+}
+
+.info {
+  margin: 1rem auto;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+.info-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.3rem;
   -ms-flex-item-align: auto;
       align-self: auto;
 }
 
-.container {
+.label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  vertical-align: middle;
 }
 
-.codeinfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 1.5rem;
+#btn-settings {
+  display: none;
 }
 
-h4 {
-  font-size: 1.3125rem;
-  margin-bottom: .5rem;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-top: 0;
-  display: block;
-}
-
-textarea {
-  /* background-color: transparent; */
-  background-color: #515b65;
-  color: #e4e7ea;
-  border-radius: 4px;
+.form-control, .form-control:focus {
+  resize: vertical;
   overflow: auto;
+  background-color: #515b65;
   overflow-wrap: break-word;
   height: auto;
-  padding: .375rem .75rem;
-  resize: vertical;
-  border: 1px solid #23282c;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
-  /* outline:none; */
+  min-height: 85px;
 }
 
-textarea:focus {
-  /* outline: white;
-		outline-color: white;
-		outline-offset: 0px;
-		outline-color: $blueclr;
-		border: none; 
-		border-style: none; */
-  border-color: #79d0ff;
-  outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 162, 248, 0.25);
-          box-shadow: 0 0 0 0.2rem rgba(0, 162, 248, 0.25);
-}
-
-textarea:placeholder {
+.form-control::-webkit-input-placeholder, .form-control:focus::-webkit-input-placeholder {
   color: #ACB4BC;
 }
 
-::-webkit-input-placeholder {
-  /* Chrome */
+.form-control:-ms-input-placeholder, .form-control:focus:-ms-input-placeholder {
   color: #ACB4BC;
 }
 
-.info {
-  list-style: none;
-  vertical-align: text-top;
+.form-control::-ms-input-placeholder, .form-control:focus::-ms-input-placeholder {
+  color: #ACB4BC;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #e2e2e2;
-}
-
-ul, li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
-  line-height: 2em;
-  gap: 3rem;
+.form-control::placeholder, .form-control:focus::placeholder {
+  color: #ACB4BC;
 }
 
 .output {
-  color: #e4e7ea;
+  background-color: #515b65;
+  height: auto;
   white-space: pre-wrap;
-  font-family: "Roboto", sans-serif;
-  margin-top: 100px;
-  margin-right: -100px;
+  padding: 6px 12px;
+  min-height: 85px;
+  display: inline-table;
+  width: 100%;
 }
 
-div {
-  display: block;
+footer {
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
-button {
-  margin-left: 7rem;
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #3390ee;
 }
 /*# sourceMappingURL=style.css.map */
