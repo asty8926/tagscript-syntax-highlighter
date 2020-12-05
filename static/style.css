@@ -20,6 +20,10 @@ position icon owner randomonline randomoffline members bots humans roles channel
 /* true false */
 /* %a %A %w %d %-d %b %B %m %-m %y %Y %H %-H %I %-I %p %M %-M %S %-S %f %z %Z %j %-j %U %W %c %x %X %u %n %i %s */
 /* http https */
+.numbers {
+  color: #FF80FF;
+}
+
 .backtiles {
   color: #80FF80;
 }
@@ -56,6 +60,96 @@ position icon owner randomonline randomoffline members bots humans roles channel
   color: #BA75FF;
 }
 
+.tooltip-c {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-c:hover .tooltip-container,
+.tooltip-c:focus .tooltip-container {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.tooltip-c:hover {
+  outline: 1px solid #a19f9f;
+}
+
+.tooltip-container {
+  white-space: normal;
+  z-index: 10;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  bottom: -118px;
+  left: -5px;
+  display: block;
+  background: #18191C;
+  width: 300px;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: text;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -20px, 0);
+          transform: translate3d(0, -20px, 0);
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.tooltip-container:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 14px;
+  bottom: 108px;
+  left: 0;
+}
+
+.tooltip-container:after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: 103px;
+  margin-left: 16px;
+  background-color: #5C6FB1;
+}
+
+.tooltip-header {
+  display: block;
+  background: #5C6FB1;
+  color: white;
+  padding: 10px 17px 9px 17px;
+  line-height: 16px;
+}
+
+.tooltip-header a {
+  display: inline-block;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+.tooltip-header a:hover {
+  text-decoration: none;
+  color: white;
+  -webkit-transform: translate(3px, 0px);
+          transform: translate(3px, 0px);
+}
+
+.tooltip-text {
+  display: block;
+  padding: 13px 17px;
+  color: white;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -80,8 +174,36 @@ body {
   height: auto;
 }
 
+.btn {
+  background: #5C6FB1;
+}
+
+.btn:hover {
+  background: #4b5a8f;
+}
+
+.donate {
+  background: #43B581;
+}
+
+.donate:hover {
+  background: #3c9e72;
+}
+
 .navbar {
   margin-bottom: 1rem;
+  background: #2f3136;
+  -webkit-box-shadow: 0px 0.5px 2px #1E1F1F;
+          box-shadow: 0px 0.5px 2px #1E1F1F;
+}
+
+.navbar-brand {
+  padding-top: 0px;
+  padding-bottom: 4px;
+}
+
+.nav-link:hover {
+  color: #5C6FB1;
 }
 
 label {
@@ -94,11 +216,18 @@ label {
 }
 
 .row {
-  gap: 3rem;
+  gap: 2rem;
+  margin: 0;
+}
+
+.col {
+  background: #202225;
+  border: 1px solid #23282C;
 }
 
 .badge {
   margin-left: 0.5rem;
+  vertical-align: text-top;
 }
 
 .info {
@@ -114,15 +243,22 @@ label {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 1rem;
+  background: #202225;
+  vertical-align: middle;
 }
 
 .info-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  vertical-align: middle;
   gap: 0.3rem;
   -ms-flex-item-align: auto;
       align-self: auto;
+  margin-top: 1em;
 }
 
 .label {
@@ -140,12 +276,17 @@ label {
 }
 
 .form-control, .form-control:focus {
-  resize: vertical;
+  resize: none;
   overflow: auto;
-  background-color: #515b65;
+  background-color: #36393F;
   overflow-wrap: break-word;
   height: auto;
   min-height: 85px;
+  border: none;
+}
+
+.form-control:focus, .form-control:focus:focus {
+  border: 1px solid #23282C;
 }
 
 .form-control::-webkit-input-placeholder, .form-control:focus::-webkit-input-placeholder {
@@ -165,18 +306,23 @@ label {
 }
 
 .output {
-  background-color: #515b65;
+  background-color: #36393F;
   height: auto;
   white-space: pre-wrap;
   overflow-wrap: break-word;
+  word-break: break-all;
   padding: 6px 12px;
   min-height: 85px;
-  max-width: 472px;
 }
 
 footer {
   text-align: center;
+  vertical-align: middle;
   margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  background: #2f3136;
+  -webkit-box-shadow: 0px -0.5px 2px #1E1F1F;
+          box-shadow: 0px -0.5px 2px #1E1F1F;
 }
 
 a {
@@ -185,5 +331,21 @@ a {
 
 a:hover {
   color: #3390ee;
+}
+
+.code-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+.code-div {
+  min-height: 85px;
+  min-width: 472px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */

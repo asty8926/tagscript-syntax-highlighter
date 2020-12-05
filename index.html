@@ -12,35 +12,41 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
 	<script src="https://unpkg.com/vue" defer></script>
 	<script src="./static/app.js" defer></script>
 </head>
 <body class="bg-dark text-light">
 	<!-- /HEADER -->
-	<nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-sm sticky-top">
 		<a class="navbar-brand" href="#">
-			<img src="https://raw.githubusercontent.com/asty8926/icons/main/TagScript_Logo.svg" width="75" height="35" class="d-inline-block align-top" alt="">
+			<img src="https://raw.githubusercontent.com/asty8926/icons/main/TagScript_Logo.svg" width="70" height="30" class="d-inline-block align-top" alt="">
 			TagScript Highlighter
 		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
+		<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarText">
 			<ul class="navbar-nav mr-auto">
 			  <li class="nav-item">
-				<a class="nav-link text-light" href="https://carl.gg/" target="_blank">Dashboard</a>
+				<a class="nav-link" href="https://carl.gg/" target="_blank">Dashboard</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link text-light" href="https://docs.carl.gg/tags-and-triggers/tags-advanced-usage/">Documentation<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="https://docs.carl.gg/tags-and-triggers/tags-advanced-usage/" target="_blank">Documentation<span class="sr-only">(current)</span></a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link text-light" href="https://discordapp.com/oauth2/authorize?client_id=235148962103951360&scope=bot&permissions=66321471" target="_blank">Invite</a>
+				<a class="nav-link" href="https://discordapp.com/oauth2/authorize?client_id=235148962103951360&scope=bot&permissions=66321471" target="_blank">Invite</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link text-light" href="https://discord.gg/DSg744v" target="_blank">Support Server</a>
+				<a class="nav-link" href="https://discord.gg/tWCsmK8k3f" target="_blank">Support Server</a>
 			  </li>
 			</ul>
-			<a class="btn btn-primary" href="https://www.patreon.com/asty_" target="_blank" role="button">Donate</a>
+			<a class="btn text-white donate" href="https://www.patreon.com/asty_" target="_blank" role="button">Donate</a>
 			<!--<button type="button" class="btn btn-primary"><a href="https://www.patreon.com/asty_">Donate</a></button>-->
 		  </div>
 	</nav>
@@ -49,21 +55,21 @@
 	<div id="app">
 		<div class="container">
 			<div class="row">
-			  <div class="col rounded border border-secondary">
+			  <div class="col rounded">
 				<div class="form-group">
 					<div class="label label-code">
 						<label>Raw Code</label>
 						<span class="buttons">
-							<button type="button" class="btn btn-primary btn-sm">Copy to clipboard</button>
-							<button type="button" class="btn btn-primary btn-sm">Paste</button>
+							<button type="button" class="btn btn-sm text-light">Copy to clipboard</button>
+							<button type="button" class="btn btn-sm text-light">Paste</button>
 						</span>
 						
 					</div>
 					
-					<textarea autofocus class="form-control text-white" v-model="input" @input="autoHeight()" placeholder="Type code here" ref="input"></textarea>
+					<textarea id="input" class="form-control text-white" v-model="input" @keyup="autoHeight()" placeholder="Type code here" ref="input" autofocus></textarea>
 				</div>
 			  </div>
-			  <div class="col rounded border border-secondary">
+			  <div class="col rounded">
 				<div class="form-group">
 					<div class="label label-hl">
 						<span class="hl-title-badge">
@@ -81,25 +87,42 @@
 				</div>
 			  </div>
 			</div>
-			<div class="info">
+			<div class="info text-light rounded">
 				<span class="info-item">
-					<p><u>Brackets:</u></p>
+					<p><b>Brackets:</b></p>
 					<p>{{ countBrackets }}</p>
 				</span>
 				<span class="info-item">
-					<p><u>Lines:</u></p>
+					<p><b>Lines:</b></p>
 					<p>{{ countLines }}</p>
 				</span>
-				<span class="info-item"></span>
-				<p><u>Characters:</u></p>
-				<p>{{ countChars }}</p>
+				<span class="info-item">
+					<p><b>Characters:</b></p>
+					<p>{{ countChars }}</p>
+				</span>
 			</div>
 		</div>
 	</div>
-	
+	<!--
+	<div class="code-container rounded">
+		<div contenteditable="true" class="rounded code-div" ref="code" @input="updCode()" v-html="hlCode()">Test</div>
+	</div> -->
+	<!--
+	<span class="brackets" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">}</span>
+
+	<span class="brackets tooltip-c">Hover me!
+		<span class="tooltip-container">
+				<span class="tooltip-header">
+					Bracket
+				</span>
+				<span class="tooltip-text">
+					<b>Brackets</b> are what encloses blocks in TagScript.
+				</span>
+			</span>
+		</span> -->
+				
 		<!-- /FOOTER -->
-		<footer class="fixed-bottom bg-dark">
-			<hr>
+		<footer class="fixed-bottom">
 			<p class="copyright">Not affiliated with <u><a class="active" href="https://carl.gg/" target="_blank">Carl-bot</a></u> or <u><a class="active" href="https://botlabs.gg/" target="_blank">Botlabs</a></u> - Made by Asty'#8926</p>
 		</footer>
 
