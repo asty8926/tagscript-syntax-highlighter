@@ -146,35 +146,5 @@ new Vue({
 			document.execCommand("copy")
 		}
 
-		/*webScrape: async () => {
-			// https://carl.gg/api/v1/tags/446736 https://carl.gg/api/v1/tags/365946
-			//let request = new HMLHttpRequest()
-			//request.open('GET', 'https://carl.gg/api/v1/tags/365946')
-			//request.send()
-			try {
-				const response = await fetch('https://carl.gg/api/v1/tags/365946')
-				const content = await response.text()
-				console.log(content)
-				return content
-			} catch (err) {
-				console.error(err)
-			}
-		}*/
-		/* webScrape: async () => {
-			 const response = await fetch('https://carl.gg/t/365946', {
-				method: 'GET',
-				mode: 'no-cors'
-			})
-			//.then(response => response.text().then(html => console.log(html)))
-			//.catch(error => console.log(error))
-			const html = await response.text()
-			console.log(html)
-			//let parser = new DOMParser()
-			//let doc = parser.parseFromString(html, "text/html")
-			//console.log(doc)
-			//let textarea = doc.textarea.value
-			//console.log(textarea)
-		} */
-
 	}
 })
