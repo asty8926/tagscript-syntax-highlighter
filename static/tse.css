@@ -6,7 +6,7 @@
     color: #80FF80;
 }
 
-.cm-s-tse .cm-comments {
+.cm-s-tse .cm-comment {
     color: #72B8B8;
 }
 
@@ -18,11 +18,15 @@
     color: #00FFFF;
 }
 
-.cm-s-tse .cm-blocks {
+.cm-s-tse .cm-lb + .cm-blocks {
     color: #00FF00;
 }
 
-.cm-s-tse .cm-parameters {
+.cm-s-tse .cm-canparam + .cm-lp + .cm-parameters {
+    color: #0080FF;
+}
+
+.cm-s-tse .cm-mathblock + .cm-colon + .cm-math {
     color: #0080FF;
 }
 

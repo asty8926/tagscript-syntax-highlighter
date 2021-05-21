@@ -48,7 +48,7 @@ new Vue({
 
 CodeMirror.defineSimpleMode("tse", {
 	start: [{
-			regex: /\d+/g,
+			regex: /\d*\.?\d+/g,
 			token: "numbers"
 		},
 		{
@@ -56,20 +56,48 @@ CodeMirror.defineSimpleMode("tse", {
 			token: "comment"
 		},
 		{
-			regex: /\{|\}/g,
-			token: "brackets"
+			regex: /\{/g,
+			token: "lb brackets"
 		},
 		{
-			regex: /(==|!=|(?<!>)<=|\||\+|(?<!<?)\/|\*|~|,|\(|\)|__|\^|:)/g,
+			regex: /\}/g,
+			token: "rb brackets"
+		},
+		{
+			regex: /\(/g,
+			token: "lp operators"
+		},
+		{
+			regex: /\)/g,
+			token: "rp operators"
+		},
+		{
+			regex: /\:/g,
+			token: "colon operators"
+		},
+		{
+			regex: /(==|!=|(?<!>)<=|\||\+|(?<!<?)\/|\*|~|,|__|\^)/g,
 			token: "operators"
 		},
 		{
-			regex: /(unix|uses|args|message|user|target|server|join|replace|if|any|all|and|or|break|contains|strf|#|random|rand|urlencode|td|index|list|cycle|=|let|assign|in|upper|lower|m|math|50:|c|cmd|redirect|require|blacklist|react|reactu|dm|delete|silence|override|lvl|range)(?=(\:|\(|\}))/g,
+			regex: /(m|math|\+|m)(?=(\:|\(|\}))/g,
+			token: "block mathblock"
+		},
+		{
+			regex: /(unix|uses|args|message|join|replace|if|any|all|and|or|break|contains|strf|#|random|rand|urlencode|td|index|list|cycle|=|let|assign|in|upper|lower|50:|c|cmd|redirect|require|blacklist|react|reactu|dm|delete|silent|silence|override|lvl|range)(?=(\:|\(|\}))/g,
 			token: "blocks"
 		},
 		{
-			regex: /(avatar|id|created_at|joined_at|roleids|color|name|proper|position|icon|owner|randomonline|randomoffline|members|bots|humans|roles|channels|topic|slowmode|mention|trunc|round|abs)/g,
+			regex: /(user|target|server)(?=(\:|\(|\}))/g,
+			token: "blocks canparam"
+		},
+		{
+			regex: /(avatar|id|created_at|joined_at|roleids|color|name|proper|position|icon|owner|randomonline|randomoffline|members|bots|humans|roles|channels|topic|slowmode|mention)(?=\))/g,
 			token: "parameters"
+		},
+		{
+			regex: /(trunc|round|abs)/g,
+			token: "math"
 		},
 		{
 			regex: /(true|false)/g,
@@ -82,7 +110,10 @@ CodeMirror.defineSimpleMode("tse", {
 		{
 			regex: /(%a|%A|%w|%d|%-d|%b|%B|%m|%-m|%y|%Y|%H|%-H|%I|%-I|%p|%M|%-M|%S|%-S|%f|%z|%Z|%j|%-j|%U|%W|%c|%x|%X|%u|%n|%i|%s)/g,
 			token: "strf"
-		},
+		}, {
+			regex: /.+?/,
+			token: "text"
+		}
 	],
 });
 
