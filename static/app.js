@@ -81,7 +81,7 @@ CodeMirror.defineSimpleMode("tse", {
 		},
 		{
 			regex: /(m|math|\+|m)(?=(\:|\(|\}))/g,
-			token: "block mathblock"
+			token: "blocks mathblock"
 		},
 		{
 			regex: /(unix|uses|args|message|join|replace|if|any|all|and|or|break|contains|strf|#|random|rand|urlencode|td|index|list|cycle|=|let|assign|in|upper|lower|50:|c|cmd|redirect|require|blacklist|react|reactu|dm|delete|silent|silence|override|lvl|range)(?=(\:|\(|\}))/g,
