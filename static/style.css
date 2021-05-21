@@ -325,8 +325,7 @@ label {
 footer {
   text-align: center;
   vertical-align: middle;
-  margin-top: 1.5rem;
-  padding-top: 1.2rem;
+  padding: 1.2rem;
   background: #2f3136;
   -webkit-box-shadow: 0px -0.5px 2px #1E1F1F;
   box-shadow: 0px -0.5px 2px #1E1F1F;
@@ -363,8 +362,19 @@ a:hover {
   padding: 25px;
 }
 
-.CodeMirror, .CodeMirror-scroll {
-  min-height: 300px !important;
+.container {
   height: auto !important;
-  max-height: 60vh !important;
+}
+
+.CodeMirror, .CodeMirror-scroll {
+  height: 100%;
+  min-height: 300px !important;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  padding-bottom: 5rem;
 }
