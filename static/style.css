@@ -362,3 +362,9 @@ a:hover {
   background-color: #202225;
   padding: 25px;
 }
+
+.CodeMirror, .CodeMirror-scroll {
+  min-height: 300px !important;
+  height: auto !important;
+  max-height: 60vh !important;
+}
