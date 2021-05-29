@@ -8,6 +8,7 @@ Quick access: https://fonts.google.com
 */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
+
 /* backtiles */
 /* {=(COMMENT):XXX} */
 /* {} */
@@ -71,7 +72,7 @@ position icon owner randomonline randomoffline members bots humans roles channel
   visibility: visible;
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .tooltip-c:hover {
@@ -82,7 +83,7 @@ position icon owner randomonline randomoffline members bots humans roles channel
   white-space: normal;
   z-index: 10;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   bottom: -118px;
   left: -5px;
@@ -95,7 +96,7 @@ position icon owner randomonline randomoffline members bots humans roles channel
   visibility: hidden;
   opacity: 0;
   -webkit-transform: translate3d(0, -20px, 0);
-          transform: translate3d(0, -20px, 0);
+  transform: translate3d(0, -20px, 0);
   -webkit-transition: all .5s ease-out;
   transition: all .5s ease-out;
 }
@@ -115,7 +116,7 @@ position icon owner randomonline randomoffline members bots humans roles channel
   width: 10px;
   height: 10px;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   bottom: 103px;
   margin-left: 16px;
   background-color: #5C6FB1;
@@ -141,7 +142,7 @@ position icon owner randomonline randomoffline members bots humans roles channel
   text-decoration: none;
   color: white;
   -webkit-transform: translate(3px, 0px);
-          transform: translate(3px, 0px);
+  transform: translate(3px, 0px);
 }
 
 .tooltip-text {
@@ -152,7 +153,7 @@ position icon owner randomonline randomoffline members bots humans roles channel
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *::-webkit-scrollbar {
@@ -194,7 +195,7 @@ body {
   margin-bottom: 1rem;
   background: #2f3136;
   -webkit-box-shadow: 0px 0.5px 2px #1E1F1F;
-          box-shadow: 0px 0.5px 2px #1E1F1F;
+  box-shadow: 0px 0.5px 2px #1E1F1F;
 }
 
 .navbar-brand {
@@ -237,11 +238,11 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 1rem;
   background: #202225;
   vertical-align: middle;
@@ -252,12 +253,12 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   vertical-align: middle;
   gap: 0.3rem;
   -ms-flex-item-align: auto;
-      align-self: auto;
+  align-self: auto;
   margin-top: 1em;
 }
 
@@ -266,8 +267,8 @@ label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   vertical-align: middle;
 }
 
@@ -275,7 +276,8 @@ label {
   display: none;
 }
 
-.form-control, .form-control:focus {
+.form-control,
+.form-control:focus {
   resize: none;
   overflow: auto;
   background-color: #36393F;
@@ -285,23 +287,28 @@ label {
   border: none;
 }
 
-.form-control:focus, .form-control:focus:focus {
+.form-control:focus,
+.form-control:focus:focus {
   border: 1px solid #23282C;
 }
 
-.form-control::-webkit-input-placeholder, .form-control:focus::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder,
+.form-control:focus::-webkit-input-placeholder {
   color: #ACB4BC;
 }
 
-.form-control:-ms-input-placeholder, .form-control:focus:-ms-input-placeholder {
+.form-control:-ms-input-placeholder,
+.form-control:focus:-ms-input-placeholder {
   color: #ACB4BC;
 }
 
-.form-control::-ms-input-placeholder, .form-control:focus::-ms-input-placeholder {
+.form-control::-ms-input-placeholder,
+.form-control:focus::-ms-input-placeholder {
   color: #ACB4BC;
 }
 
-.form-control::placeholder, .form-control:focus::placeholder {
+.form-control::placeholder,
+.form-control:focus::placeholder {
   color: #ACB4BC;
 }
 
@@ -318,11 +325,10 @@ label {
 footer {
   text-align: center;
   vertical-align: middle;
-  margin-top: 1.5rem;
-  padding-top: 1.2rem;
+  padding: 1.2rem;
   background: #2f3136;
   -webkit-box-shadow: 0px -0.5px 2px #1E1F1F;
-          box-shadow: 0px -0.5px 2px #1E1F1F;
+  box-shadow: 0px -0.5px 2px #1E1F1F;
 }
 
 a {
@@ -348,4 +354,27 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
 }
+
 /*# sourceMappingURL=style.css.map */
+
+#test {
+  background-color: #202225;
+  padding: 25px;
+}
+
+.container {
+  height: auto !important;
+}
+
+.CodeMirror, .CodeMirror-scroll {
+  height: 100%;
+  min-height: 300px !important;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  padding-bottom: 5rem;
+}

@@ -1,0 +1,52 @@
+.cm-s-tse .cm-numbers {
+    color: #FF80FF;
+}
+
+.cm-s-tse .cm-backtiles {
+    color: #80FF80;
+}
+
+.cm-s-tse .cm-comment {
+    color: #72B8B8;
+}
+
+.cm-s-tse .cm-brackets {
+    color: #FF5555;
+}
+
+.cm-s-tse .cm-operators {
+    color: #00FFFF;
+}
+
+.cm-s-tse .cm-lb + .cm-blocks {
+    color: #00FF00;
+}
+
+.cm-s-tse .cm-canparam + .cm-lp + .cm-parameters {
+    color: #0080FF;
+}
+
+.cm-s-tse .cm-mathblock + .cm-colon + .cm-math {
+    color: #0080FF;
+}
+
+.cm-s-tse .cm-boolean {
+    color: #FFFF00;
+}
+
+.cm-s-tse .cm-strf {
+    color: #FF5555;
+}
+
+.cm-s-tse .cm-http {
+    color: #BA75FF;
+}
+
+.cm-s-tse {
+    background-color: #36393F;
+    color: white;
+}
+
+.cm-s-tse .CodeMirror-cursor {
+    border-color: white;
+}
