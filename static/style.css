@@ -217,7 +217,6 @@ label {
 }
 
 .row {
-  gap: 2rem;
   margin: 0;
 }
 
@@ -381,4 +380,9 @@ html, body {
 
 navbar .dropdown-toggle::after {
   vertical-align: .125em;
+}
+
+#app .container {
+  width: 100%;
+  max-width: 1000px;
 }
