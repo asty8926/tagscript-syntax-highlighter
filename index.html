@@ -16,100 +16,74 @@
 </head>
 
 <body class="bg-dark text-light">
-	<!-- /HEADER -->
-	<nav class="navbar navbar-expand-sm sticky-top">
-		<a class="navbar-brand" href="#">
-			<img src="https://raw.githubusercontent.com/asty8926/icons/main/TagScript_Logo.svg" width="70" height="30"
-				class="d-inline-block align-top" alt="">
-			TagScript Highlighter
-		</a>
-		<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarText"
-			aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarText">
-			<ul class="navbar-nav mr-auto">
-			  <li class="nav-item">
-				<a class="nav-link" href="https://carl.gg/" target="_blank">Dashboard</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="https://docs.carl.gg/tags-and-triggers/tags-advanced-usage/" target="_blank">Documentation<span class="sr-only">(current)</span></a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="https://discordapp.com/oauth2/authorize?client_id=235148962103951360&scope=bot&permissions=66321471" target="_blank">Invite</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="https://discord.gg/S2ZkBTnd8X" target="_blank">Support Server</a>
-			  </li>
-			</ul>
-			<a class="btn text-white donate" href="https://www.patreon.com/asty_" target="_blank"
-				role="button">Donate</a>
-		</div>
-	</nav>
-
-	<!-- /BODY -->
-	<div id="app">
-		<div class="container">
-			<!--<div class="row">
-			  <div class="col rounded">
-				<div class="form-group">
-					<div class="label label-code">
-						<label>Raw Code</label>
-						<span class="buttons">
-							<button type="button" class="btn btn-sm text-light">Copy to clipboard</button>
-							<button type="button" class="btn btn-sm text-light">Paste</button>
-						</span>
-						
-					</div>
-					
-					<textarea id="input" class="form-control text-white" v-model="input" @keyup="autoHeight()" placeholder="Type code here" ref="input" autofocus></textarea>
-				</div>
-			  </div>
-			  <div class="col rounded">
-				<div class="form-group">
-					<div class="label label-hl">
-						<span class="hl-title-badge">
-							<label>Highlighted</label><span class="badge badge-primary" data-toggle="tooltip" data-placement="right" title="Should improve over time!">Beta</span>
-						</span>
-						<span class="buttons">
-							<button type="button" id="btn-settings" class="btn btn-secondary btn-sm">⚙️</button>
-						</span>
-						
-					</div>
-					<div class="output rounded" v-html="highlight()" ref="output">
-					</div>
-				</div>
-			  </div>
-			</div>-->
-			<div class="row">
-				<div class="col rounded">
-					<div class="form-group my-3">
-						<textarea id="editor"></textarea>
-					</div>
-				</div>
+	<div id="wrapper">
+		<!-- /HEADER -->
+		<nav class="navbar navbar-expand-md sticky-top">
+			<a class="navbar-brand" href="#">
+				<img src="https://raw.githubusercontent.com/asty8926/icons/main/TagScript_Logo.svg" width="70"
+					height="30" class="d-inline-block align-top" alt="">
+				TagScript Highlighter
+			</a>
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarText"
+				aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="https://docs.carl.gg/tags-and-triggers/tags-advanced-usage/"
+							target="_blank">TagScript Documentation<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="carllinks" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Carl-bot Links
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" target="_blank" href="https://carl.gg/">Website</a>
+							<a class="dropdown-item" target="_blank" href="https://carl.gg/invite">Invite</a>
+							<a class="dropdown-item" target="_blank" href="https://carl.gg/discord">Support Server</a>
+						</div>
+					</li>
+				</ul>
+				<a class="btn text-white donate" href="https://www.patreon.com/asty_" target="_blank"
+					role="button">Donate</a>
 			</div>
-			<div class="info text-light rounded">
-				<span class="info-item">
-					<p><b>Brackets:</b></p>
-					<p>{{ countBrackets }}</p>
-				</span>
-				<span class="info-item">
-					<p><b>Lines:</b></p>
-					<p>{{ countLines }}</p>
-				</span>
-				<span class="info-item">
-					<p><b>Characters:</b></p>
-					<p>{{ countChars }}</p>
-				</span>
+		</nav>
+
+		<!-- /BODY -->
+		<div id="app">
+			<div class="container">
+				<div class="row">
+					<div class="col rounded">
+						<div class="form-group my-3">
+							<textarea id="editor"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="info text-light rounded p-3">
+					<span class="d-inline-block px-2">
+						<p class="m-0"><b>Brackets:</b> {{ countBrackets }}</p>
+					</span>
+					<span class="d-inline-block px-2">
+						<p class="m-0"><b>Lines:</b> {{ countLines }}</p>
+					</span>
+					<span class="d-inline-block px-2">
+						<p class="m-0"><b>Characters:</b> {{ countChars }}</p>
+					</span>
+				</div>
 			</div>
 		</div>
 	</div>
 	<!-- /FOOTER -->
-	<footer class="fixed-bottom">
-		<p class="copyright">Not affiliated with <u><a class="active" href="https://carl.gg/"
-					target="_blank">Carl-bot</a></u> or <u><a class="active" href="https://botlabs.gg/"
-					target="_blank">Botlabs</a></u> - Made by <a class="" href="https://www.patreon.com/asty_"
-				target="_blank">Asty'#8926</a></p>
+	<footer>
+		<p class="copyright m-0">
+			<span class="d-inline-block">Made by <u><a class="" href="https://www.patreon.com/asty_"
+						target="_blank">Asty'#8926</a></u>
+				and enhanced by asportnoy#6969</span> |
+			<span class="d-inline-block">Not affiliated with <u><a class="active" href="https://carl.gg/"
+						target="_blank">Carl-bot</a></u> or <u><a class="active" href="https://botlabs.gg/"
+						target="_blank">Botlabs</a></u></span></p>
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
