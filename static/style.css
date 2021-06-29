@@ -386,3 +386,16 @@ navbar .dropdown-toggle::after {
   width: 100%;
   max-width: 1000px;
 }
+
+#wrapper {
+  min-height: 100%;
+  margin-bottom: -62.38px;
+}
+
+#wrapper:after {
+  content: "";
+  display: block;
+}
+footer, #wrapper:after {
+  height: 62.38px;
+}

@@ -16,68 +16,70 @@
 </head>
 
 <body class="bg-dark text-light">
-	<!-- /HEADER -->
-	<nav class="navbar navbar-expand-md sticky-top">
-		<a class="navbar-brand" href="#">
-			<img src="https://raw.githubusercontent.com/asty8926/icons/main/TagScript_Logo.svg" width="70" height="30"
-				class="d-inline-block align-top" alt="">
-			TagScript Highlighter
-		</a>
-		<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarText"
-			aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarText">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="https://docs.carl.gg/tags-and-triggers/tags-advanced-usage/"
-						target="_blank">TagScript Documentation<span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="carllinks" role="button" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false">
-						Carl-bot Links
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="https://carl.gg/">Website</a>
-						<a class="dropdown-item" href="https://carl.gg/invite">Invite</a>
-						<a class="dropdown-item" href="https://carl.gg/discord">Support Server</a>
-					</div>
-				</li>
-			</ul>
-			<a class="btn text-white donate" href="https://www.patreon.com/asty_" target="_blank"
-				role="button">Donate</a>
-		</div>
-	</nav>
+	<div id="wrapper">
+		<!-- /HEADER -->
+		<nav class="navbar navbar-expand-md sticky-top">
+			<a class="navbar-brand" href="#">
+				<img src="https://raw.githubusercontent.com/asty8926/icons/main/TagScript_Logo.svg" width="70"
+					height="30" class="d-inline-block align-top" alt="">
+				TagScript Highlighter
+			</a>
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarText"
+				aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="https://docs.carl.gg/tags-and-triggers/tags-advanced-usage/"
+							target="_blank">TagScript Documentation<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="carllinks" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Carl-bot Links
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="https://carl.gg/">Website</a>
+							<a class="dropdown-item" href="https://carl.gg/invite">Invite</a>
+							<a class="dropdown-item" href="https://carl.gg/discord">Support Server</a>
+						</div>
+					</li>
+				</ul>
+				<a class="btn text-white donate" href="https://www.patreon.com/asty_" target="_blank"
+					role="button">Donate</a>
+			</div>
+		</nav>
 
-	<!-- /BODY -->
-	<div id="app">
-		<div class="container">
-			<div class="row">
-				<div class="col rounded">
-					<div class="form-group my-3">
-						<textarea id="editor"></textarea>
+		<!-- /BODY -->
+		<div id="app">
+			<div class="container">
+				<div class="row">
+					<div class="col rounded">
+						<div class="form-group my-3">
+							<textarea id="editor"></textarea>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="info text-light rounded p-2">
-				<div class="row w-100">
-					<div class="col-12 col-sm-6 col-md-4">
-						<p class="p-0 m-0"><b>Brackets:</b> {{ countBrackets }}</p>
-					</div>
-					<div class="col-6 col-sm-3 col-md-4">
-						<p class="p-0 m-0"><b>Lines:</b> {{ countLines }}</p>
-					</div>
-					<div class="col-6 col-sm-3 col-md-4">
-						<p class="p-0 m-0"><b>Characters:</b> {{ countChars }}</p>
+				<div class="info text-light rounded p-2">
+					<div class="row w-100">
+						<div class="col-12 col-sm-6 col-md-4">
+							<p class="p-0 m-0"><b>Brackets:</b> {{ countBrackets }}</p>
+						</div>
+						<div class="col-6 col-sm-3 col-md-4">
+							<p class="p-0 m-0"><b>Lines:</b> {{ countLines }}</p>
+						</div>
+						<div class="col-6 col-sm-3 col-md-4">
+							<p class="p-0 m-0"><b>Characters:</b> {{ countChars }}</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- /FOOTER -->
-	<footer class="fixed-bottom">
-		<p class="copyright">Not affiliated with<u><a class="active" href="https://carl.gg/"
+	<footer>
+		<p class="copyright m-0">Not affiliated with<u><a class="active" href="https://carl.gg/"
 					target="_blank">Carl-bot</a></u>
 			or
 			<u><a class="active" href="https://botlabs.gg/" target="_blank">Botlabs</a></u>
