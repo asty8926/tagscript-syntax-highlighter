@@ -389,7 +389,7 @@ navbar .dropdown-toggle::after {
 
 #wrapper {
   min-height: 100%;
-  margin-bottom: -62.38px;
+  margin-bottom: -86.38px;
 }
 
 #wrapper:after {
@@ -397,5 +397,5 @@ navbar .dropdown-toggle::after {
   display: block;
 }
 footer, #wrapper:after {
-  height: 62.38px;
+  height: 86.38px;
 }
