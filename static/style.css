@@ -374,6 +374,11 @@ html, body {
   height: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   padding-bottom: 5rem;
 }
@@ -388,14 +393,9 @@ navbar .dropdown-toggle::after {
 }
 
 #wrapper {
-  min-height: 100%;
-  margin-bottom: -86.38px;
+  flex: 1 0 auto;
 }
 
-#wrapper:after {
-  content: "";
-  display: block;
-}
-footer, #wrapper:after {
-  height: 86.38px;
+footer {
+  flex-shrink: 0;
 }
