@@ -42,7 +42,8 @@
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" target="_blank" href="https://carl.gg/">Website</a>
 							<a class="dropdown-item" target="_blank" href="https://carl.gg/invite">Invite</a>
-							<a class="dropdown-item" target="_blank" href="https://discord.com/invite/S2ZkBTnd8X">Support Server</a>
+							<a class="dropdown-item" target="_blank"
+								href="https://discord.com/invite/S2ZkBTnd8X">Support Server</a>
 						</div>
 					</li>
 				</ul>
@@ -63,13 +64,13 @@
 				</div>
 				<div class="info text-light rounded p-3">
 					<span class="d-inline-block px-2">
-						<p class="m-0"><b>Brackets:</b> {{ countBrackets }}</p>
+						<p class="m-0"><b>Brackets:</b> <span id="balanced"></span></p>
 					</span>
 					<span class="d-inline-block px-2">
-						<p class="m-0"><b>Lines:</b> {{ countLines }}</p>
+						<p class="m-0"><b>Lines:</b> <span id="lines"></span></p>
 					</span>
 					<span class="d-inline-block px-2">
-						<p class="m-0"><b>Characters:</b> {{ countChars }}</p>
+						<p class="m-0"><b>Characters:</b> <span id="chars"></p>
 					</span>
 				</div>
 			</div>
@@ -83,26 +84,22 @@
 				and enhanced by asportnoy#6969</span> |
 			<span class="d-inline-block">Not affiliated with <u><a class="active" href="https://carl.gg/"
 						target="_blank">Carl-bot</a></u> or <u><a class="active" href="https://botlabs.gg/"
-						target="_blank">Botlabs</a></u></span></p>
+						target="_blank">Botlabs</a></u></span>
+		</p>
 	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-	</script>
-
-	<script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.js"
-		integrity="sha512-UZAFKlbB343VyEfCComsVIxp836iYUvHyAuRYFoVN4LTNB6mpM+8EgKW8ymIV2qLZQsIiNdbpmJuA8y6IKzOow=="
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/mode/simple.min.js"
-		integrity="sha512-LHMXt9MP5dNaw+AnqAuxPnO2vVlaDnwPOHoGjiqj78RS0vySPYUKAYLkyR5xhtGJTFhCJ7z/wcA34umuCf1zhQ=="
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
 		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.js"
+		integrity="sha512-n7rucz/qOiYAkYK1CVKuqygMAnohil8Rg6kKAv0IsF2xnHUhnVyD5K9GO25OUvc+WEVZVu+NIYLblIUpkBMNvQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/addon/mode/simple.min.js"
+		integrity="sha512-CGM6DWPHs250F/m90YZ9NEiEUhd9a4+u8wAzeKC6uHzZbYyt9/e2dLC5BGGB6Y0HtEdZQdSDYjDsoTyNGdMrMA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="./static/app.js"></script>
 </body>
 
