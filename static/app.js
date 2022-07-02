@@ -65,7 +65,7 @@ CodeMirror.defineSimpleMode('tse', {
 			token: 'colon operators',
 		},
 		{
-			regex: /(==|!=|(?<!>)<=|\||\+|(?<!<?)\/|\*|~|,|__|\^)/g,
+			regex: /(==|!=|>=?|<=?|[+\-*/%^])/g,
 			token: 'operators',
 		},
 		{
