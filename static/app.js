@@ -6,32 +6,31 @@ $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 });
 
-let input = '';
 
-function balancedText() {
-	/* Example to count the occurrences of a string in a string.
-		var theString = "This is a string.";
-		console.log(theString.split("is").length - 1);
-		*/
-	var balanced = '✓ Balanced';
-	var unbalanced = '❌ Unbalanced';
-	var opening = input.split('{').length - 1;
-	var closing = input.split('}').length - 1;
-	// Returns balanced if opening is equal to closing, otherwise unbalanced
-	return opening === closing ? balanced : unbalanced;
+function balancedText(input) {
+	const stack = [];
+	
+	for (let i = 0; i < input.length; i++) {
+		const char = input[i];
+
+		if (char === '{' && input[i - 1] !== '\\') {
+			stack.push('{');
+			continue;
+		}
+		if (char === '}' && input[i - 1] !== '\\' && !stack.pop()) {
+			return false;
+		}
+	}
+
+	return stack.length === 0;
 }
 
-function charCount() {
-	return input.length;
-}
-
-function lineCount() {
-	return input.split('\n').length;
-}
-
-function copy() {
-	this.input.select();
-	document.execCommand('copy');
+function lineCount(input) {
+	let count = 0;
+	for (const char of input) {
+		if (char === '\n') count++;
+	}
+	return count + 1;
 }
 
 CodeMirror.defineSimpleMode('tse', {
@@ -110,7 +109,7 @@ CodeMirror.defineSimpleMode('tse', {
 	],
 });
 
-var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+const editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
 	mode: 'tse',
 	theme: 'tse',
 	lineWrapping: true,
@@ -121,14 +120,14 @@ const LINES_EL = document.getElementById('lines');
 const CHARS_EL = document.getElementById('chars');
 
 function update() {
-	input = editor.getValue();
-	let balanced = balancedText();
-	let chars = charCount();
-	let lines = lineCount();
+	const input = editor.getValue();
+	const balanced = balancedText(input);
 
-	BALANCED_EL.textContent = balanced;
+	const lines = lineCount(input);
+
+	BALANCED_EL.textContent = balanced ? '✓ Balanced' : '❌ Unbalanced';
 	LINES_EL.textContent = lines;
-	CHARS_EL.textContent = chars;
+	CHARS_EL.textContent = input.length;
 }
 update();
 
