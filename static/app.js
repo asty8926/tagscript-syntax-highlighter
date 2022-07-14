@@ -17,7 +17,7 @@ function balancedText(input) {
 			stack.push('{');
 			continue;
 		}
-		if (char === '}' && input[i - 1] !== '\\' && stack.pop() === undefined) {
+		if (char === '}' && input[i - 1] !== '\\' && !stack.pop()) {
 			return false;
 		}
 	}
@@ -28,9 +28,9 @@ function balancedText(input) {
 function lineCount(input) {
 	let count = 0;
 	for (const char of input) {
-		count += char === '\n';
+		if (char === '\n') count++;
 	}
-	return count;
+	return count + 1;
 }
 
 CodeMirror.defineSimpleMode('tse', {
